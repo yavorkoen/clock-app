@@ -1,6 +1,5 @@
 
 .watch-frame {
-    /* box-sizing: border-box; */
     margin: auto;
     width: 200px;
     height: 200px;
@@ -9,6 +8,7 @@
     position: relative;
 }
 .hand {
+    --rotation: 0;
     background-color: black;
     position: absolute;
     left: 50%;
@@ -17,6 +17,7 @@
     transform: translate(-50%, -50%);
     transition: transform ease-in 100ms;
     border-radius: 5px;
+    transform: rotate(var(--rotation));
 }
 
 .seconds-hand {
