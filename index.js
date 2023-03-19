@@ -3,21 +3,11 @@ const minutesHand = document.querySelector('.minutes-hand');
 const hoursHand = document.querySelector('.hours-hand');
 
 
-// if (hours > 12) {
-//     hours = hours - 12;
-// }
-
-
-// let secondsInitialAngle = seconds * 6;
-// let minutesInitialAngle = minutes * 6;
-// let hoursInitialAngle = hours * 30 + minutes * 0.5;
-
-
 setInterval(setClock, 1000);
 function setClock() {
     let currentTime = new Date();
     let secondsRatio = currentTime.getSeconds() / 60;
-    let minutesRatio = currentTime.getMinutes() / 60;
+    let minutesRatio = (secondsRatio + currentTime.getMinutes()) / 60;
     let hoursRatio = (minutesRatio + currentTime.getHours()) / 12;
     setRotation(secondsHand, secondsRatio);
     setRotation(minutesHand, minutesRatio);
@@ -28,6 +18,12 @@ function setRotation(element, ratio){
     element.style.setProperty('--rotation', ratio * 360 + 'deg');
 }
 setClock();
+
+// OLD CODE
+// let secondsInitialAngle = seconds * 6;
+// let minutesInitialAngle = minutes * 6;
+// let hoursInitialAngle = hours * 30 + minutes * 0.5;
+
 // secondsHand.style.transform = `rotate(${secondsInitialAngle}deg)`;
 // minutesHand.style.transform = `rotate(${minutesInitialAngle}deg)`;
 // hoursHand.style.transform = `rotate(${hoursInitialAngle}deg)`;
