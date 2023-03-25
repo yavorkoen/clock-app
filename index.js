@@ -3,6 +3,7 @@ const minutesHand = document.querySelector('.minutes-hand');
 const hoursHand = document.querySelector('.hours-hand');
 
 
+setClock();
 setInterval(setClock, 1000);
 function setClock() {
     let currentTime = new Date();
@@ -17,7 +18,6 @@ function setClock() {
 function setRotation(element, ratio){
     element.style.setProperty('--rotation', ratio * 360 + 'deg');
 }
-setClock();
 
 // OLD CODE
 // let secondsInitialAngle = seconds * 6;

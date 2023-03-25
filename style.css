@@ -6,6 +6,7 @@
     border: 4px solid black;
     border-radius: 50%;
     position: relative;
+    margin-top: 100px;
 }
 .hand {
     --rotation: 0;
@@ -54,6 +55,22 @@
 .number9{ --rotation: 270deg;}
 .number10{ --rotation: 300deg;}
 .number11{ --rotation: 330deg;}
+
+.digit1{ --rotate: -30deg;}
+.digit2{ --rotate: -60deg;}
+.digit3{ --rotate: -90deg;}
+.digit4{ --rotate: -120deg;}
+.digit5{ --rotate: -150deg;}
+.digit6{ --rotate: -180deg;}
+.digit7{ --rotate: -210deg;}
+.digit8{ --rotate: -240deg;}
+.digit9{ --rotate: -270deg;}
+.digit10{ --rotate: -300deg;}
+.digit11{ --rotate: -330deg;}
+
+.digit{
+    transform: rotate(var(--rotate))
+}
 
 .watch-frame::after {
     content: '';
